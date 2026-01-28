@@ -240,6 +240,11 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate, 
                 .appendingPathComponent(UUID().uuidString)
                 .appendingPathExtension("mov")
             
+            // Update UI on main thread
+            DispatchQueue.main.async {
+                self.isRecording = true
+            }
+            
             // Start recording to temporary file
             self.videoOutput.startRecording(to: tempURL, recordingDelegate: self)
             

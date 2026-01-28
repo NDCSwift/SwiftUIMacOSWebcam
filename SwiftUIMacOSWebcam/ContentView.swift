@@ -80,7 +80,7 @@ struct ContentView: View {
                     Text("Video").tag(CaptureMode.video)
                 }
                 .pickerStyle(.segmented)
-                .frame(width: 150)
+                .frame(width: 200)
                 
                 Spacer()
                 
